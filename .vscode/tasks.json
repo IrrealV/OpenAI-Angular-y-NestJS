@@ -5,9 +5,9 @@
     {
       "type": "npm",
       "script": "start",
-      "runOptions": {
+      /* "runOptions": {
         "runOn": "folderOpen"
-      },
+      }, */
       "isBackground": true,
       "problemMatcher": {
         "owner": "typescript",

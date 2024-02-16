@@ -11,4 +11,16 @@
   </div>
 
   <!-- Message Box -->
+  <!-- <app-text-message-box
+    placeholder="Escribe el texto que quieres que revise"
+    (onMessage)="handleMessage($event)"
+  /> -->
+  <!-- <app-text-message-box-file
+    placeholder="Escribe el texto que quieres que revise"
+    (onMessage)="handleMessageWithFile($event)"
+  /> -->
+  <app-text-message-box-select
+    placeholder="Escribe el texto que quieres que revise"
+    (onMessage)="handleMessageWithSelect($event)"
+  />
 </div>
