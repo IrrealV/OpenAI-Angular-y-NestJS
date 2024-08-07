@@ -1,0 +1,9 @@
+{
+  "angular-schematics.schematicsDefaultOptions": {
+    "angular-*": {
+      "externalTemplate": true
+    }
+  },
+  "angular.forceStrictTemplates": true,
+  "angular.view-engine": true
+}
