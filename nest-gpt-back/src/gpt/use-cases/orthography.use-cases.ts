@@ -5,10 +5,8 @@ interface Options {
 
 export const orthographyCheckUseCase = async (
   openai: OpenAI,
-  option: Options
+  { prompt }: Options
 ) => {
-  const { prompt } = option;
-
   const completion = await openai.chat.completions.create({
     messages: [
       {
@@ -18,7 +16,7 @@ export const orthographyCheckUseCase = async (
         Las palabras usadas deben de existir en el dirccionario de la Real Academia Española.
         Debes procesar estos textos y responder en formato JSON. 
         Tu tarea consiste en identificar y corregir los errores presentes y proporcionar información detallada sobre las correcciones realizadas. 
-        Además, debes calcular y devolver un porcentaje de acierto, indicando la precisión de las correcciones.
+        Además, debes calcular y devolver un porcentaje de acierto, este porcentaje es siempre sobre 100, a más errores tenga en cada palabra, menos puntuación tendrá.
 
         Si no se encuentran errores en el texto, debes retornar un mensaje de felicitación al usuario.
 
@@ -26,7 +24,7 @@ export const orthographyCheckUseCase = async (
         Ejemplo de salida: 
         {
         userScore: number
-        errors: string[], // ['error, solución']
+        errors: string[], // ['error -> solución']
         message: string, // Usa emojis y texto para felicitar al usuario
         }
 
