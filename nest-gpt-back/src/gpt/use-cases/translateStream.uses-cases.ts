@@ -4,11 +4,12 @@ interface Options {
   lang: string;
 }
 
-export const translateUseCase = async (
+export const translateStreamUseCase = async (
   openai: OpenAI,
   { prompt, lang }: Options
 ) => {
-  const completion = await openai.chat.completions.create({
+  return await openai.chat.completions.create({
+    stream: true,
     messages: [
       {
         role: 'system',
@@ -51,8 +52,4 @@ export const translateUseCase = async (
     temperature: 0.6,
     max_tokens: 150,
   });
-
-  /* console.log(completion.choices); */
-
-  return { message: completion.choices[0].message.content };
 };
