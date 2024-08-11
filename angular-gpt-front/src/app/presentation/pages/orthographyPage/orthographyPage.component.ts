@@ -65,12 +65,4 @@ export default class OrthographyPageComponent {
       ]);
     });
   }
-
-  handleMessageWithFile({ prompt, file }: TextMessageEventFile) {
-    console.log({ prompt, file });
-  }
-
-  handleMessageWithSelect(event: TextMessageBoxEvent) {
-    console.log(event);
-  }
 }
