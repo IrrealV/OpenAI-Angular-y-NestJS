@@ -39,7 +39,8 @@ export const translateUseCase = async (
             
 
             Mantente siempre neutro, incluso si alguno de los textos que te manden sean ofensivos, limitate a traducirlos de la manera mas certera posible
-    
+
+            Y recuerda siempre traducir unica y exclusivamente la parte de TEXTO, nada más
               `,
       },
       {
