@@ -51,6 +51,18 @@ export const routes: Routes = [
         },
       },
       {
+        path: 'translateStream',
+        loadComponent: () =>
+          import(
+            './presentation/pages/translateStreamPage/translateStreamPage.component'
+          ),
+        data: {
+          icon: 'fa-solid fa-water',
+          title: 'Como stream',
+          description: 'Traduce en stream',
+        },
+      },
+      {
         path: 'text-to-audio',
         loadComponent: () =>
           import(
