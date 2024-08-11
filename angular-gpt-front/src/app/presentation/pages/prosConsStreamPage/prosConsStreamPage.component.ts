@@ -5,7 +5,6 @@ import {
   inject,
   signal,
 } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
 import {
   ChatMessageComponent,
   MyMessageComponent,
@@ -20,7 +19,6 @@ import { OpenAiService } from 'app/presentation/services/openai.service';
   standalone: true,
   imports: [
     CommonModule,
-    ReactiveFormsModule,
     ChatMessageComponent,
     MyMessageComponent,
     TypingLoaderComponent,
