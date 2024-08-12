@@ -50,7 +50,7 @@ export const translateUseCase = async (
     ],
     model: 'gpt-4o',
     temperature: 0.6,
-    max_tokens: 150,
+    max_tokens: 500,
   });
 
   /* console.log(completion.choices); */

@@ -69,7 +69,7 @@ export default class TranslatePageComponent implements OnInit {
       selectedOption,
       this.abortSignal.signal
     );
-
+    this.isLoading.set(false);
     for await (const text of stream) {
       this.handleStreamResponse(text);
     }
@@ -80,7 +80,6 @@ export default class TranslatePageComponent implements OnInit {
     const messages = this.messages();
 
     this.messages.set([...messages, { isGpt: true, text: message }]);
-    this.isLoading.set(false);
   }
 
   getAllLanguages(): Options[] {
