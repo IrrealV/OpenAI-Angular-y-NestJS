@@ -5,6 +5,7 @@ import {
   prosConsUseCase,
   translateUseCase,
   translateStreamUseCase,
+  textToAudioUseCase,
 } from '@use-cases/index';
 import { from } from 'rxjs';
 
@@ -28,5 +29,9 @@ export class OpenAiService {
 
   translateStream(prompt: string, lang: string, abortSignal: AbortSignal) {
     return translateStreamUseCase(prompt, lang, abortSignal);
+  }
+
+  textToAudio(prompt: string, voice: string) {
+    return from(textToAudioUseCase(prompt, voice));
   }
 }
