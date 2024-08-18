@@ -9,6 +9,7 @@ import {
   translateUseCase,
   translateStreamUseCase,
   textToAudioUseCase,
+  audioToTextUseCase,
 } from './use-cases';
 import {
   OrthographyDto,
@@ -17,6 +18,7 @@ import {
   TranslateDto,
 } from './dtos';
 import OpenAI from 'openai';
+import { AudioToTextDto } from './dtos/audio-to-text.dto';
 
 @Injectable()
 export class GptService {
@@ -70,5 +72,13 @@ export class GptService {
     if (!wasFound) throw new NotFoundException(`File ${fileId} is not found`);
 
     return filePath;
+  }
+
+  async audioToText(
+    audioFile: Express.Multer.File,
+    audioToTextDto?: AudioToTextDto
+  ) {
+    const { prompt } = audioToTextDto;
+    return await audioToTextUseCase(this.openai, { audioFile, prompt });
   }
 }
