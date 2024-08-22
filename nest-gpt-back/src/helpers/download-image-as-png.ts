@@ -13,7 +13,7 @@ export const downloadImageAsPng = async (url: string) => {
 
   fs.mkdirSync(folderPath, { recursive: true });
 
-  const imageNamePng = `${new Date().getTime()} .png`;
+  const imageNamePng = `${new Date().getTime()}.png`;
   const buffer = Buffer.from(await response.arrayBuffer());
 
   fs.writeFileSync(`${folderPath}/${imageNamePng}`, buffer);
