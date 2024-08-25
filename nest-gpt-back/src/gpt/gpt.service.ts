@@ -11,16 +11,18 @@ import {
   textToAudioUseCase,
   audioToTextUseCase,
   imageGenerationUseCase,
+  imageVariationUseCase,
 } from './use-cases';
 import {
+  ImageVariationDto,
   OrthographyDto,
   ProsConsDiscusserDto,
   TextToAudioDto,
   TranslateDto,
+  ImageGenerationDto,
+  AudioToTextDto,
 } from './dtos';
 import OpenAI from 'openai';
-import { AudioToTextDto } from './dtos/audio-to-text.dto';
-import { ImageGenerationDto } from './dtos/image-generation.dto';
 
 @Injectable()
 export class GptService {
@@ -100,5 +102,9 @@ export class GptService {
     if (!wasFound) throw new NotFoundException(`Image ${filename} not found`);
 
     return filePath;
+  }
+
+  async generateImageVariation({ baseImage }: ImageVariationDto) {
+    return imageVariationUseCase(this.openai, { baseImage });
   }
 }
