@@ -37,13 +37,13 @@ export const imageGenerationUseCase = async (
   }
   //originalImage= http://localhost:3000/gpt/image-generation/1724579399463.png
   //maskImage = Base64; asdfasdfadfSDSDFASDFSDFASDFsdfasdfsdf
-  const pgnImagePath = await downloadImageAsPng(originalImage);
-  const maskPath = await downloadImageAsPng(maskImage);
+  const pngImagePath = await downloadImageAsPng(originalImage, true);
+  const maskPath = await downloadImageAsPng(maskImage, true);
 
   const response = await openai.images.edit({
     model: 'dall-e-3',
     prompt: prompt,
-    image: fs.createReadStream(pgnImagePath),
+    image: fs.createReadStream(pngImagePath),
     mask: fs.createReadStream(maskPath),
     n: 1,
     size: '1024x1024',
