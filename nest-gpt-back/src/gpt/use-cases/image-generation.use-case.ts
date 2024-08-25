@@ -23,12 +23,11 @@ export const imageGenerationUseCase = async (
   });
 
   //TODO: Guardar imagen en FS.
-  downloadImageAsPng(response.data[0].url);
-  console.log(response);
+  const url = downloadImageAsPng(response.data[0].url);
 
   return {
-    url: response.data[0].url,
-    localPath: '',
+    url: url,
+    openAiUrl: response.data[0].url,
     revised_prompt: response.data[0].revised_prompt,
   };
 };
