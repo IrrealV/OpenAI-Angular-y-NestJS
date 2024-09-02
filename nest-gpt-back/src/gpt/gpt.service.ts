@@ -94,7 +94,7 @@ export class GptService {
     const filePath = path.resolve(
       __dirname,
       '../../generated/images/',
-      `${filename}.png`
+      `${filename}`
     );
 
     const wasFound = fs.existsSync(filePath);

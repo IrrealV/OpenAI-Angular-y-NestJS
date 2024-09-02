@@ -1,5 +1,5 @@
 export interface Message {
-  text: string;
+  text?: string;
   isGpt: boolean;
   info?: Info;
   audioUrl?: string;

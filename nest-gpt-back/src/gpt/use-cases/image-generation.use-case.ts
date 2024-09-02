@@ -26,8 +26,8 @@ export const imageGenerationUseCase = async (
 
     //TODO: Guardar imagen en FS.
 
-    const fileName = downloadImageAsPng(response.data[0].url);
-    const url = `${process.env.SERVER_URL}/gpt/gpt/image-generation/${fileName}`;
+    const fileName = await downloadImageAsPng(response.data[0].url);
+    const url = `${process.env.SERVER_URL}/gpt/image-generation/${fileName}`;
 
     return {
       url: url,
@@ -51,7 +51,7 @@ export const imageGenerationUseCase = async (
   });
 
   const fileName = downloadImageAsPng(response.data[0].url);
-  const url = `${process.env.SERVER_URL}/gpt/gpt/image-generation/${fileName}`;
+  const url = `${process.env.SERVER_URL}/gpt/image-generation/${fileName}`;
   return {
     url: url,
     openAiUrl: response.data[0].url,
