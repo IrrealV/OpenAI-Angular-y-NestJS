@@ -6,9 +6,9 @@
 
       @for (message of messages(); track $index) {
         @if (message.isGpt) {
-          <app-chat-message [text]="message.text" />
+          <app-chat-message [text]="message.text!" />
         } @else {
-          <app-my-message [text]="message.text" />
+          <app-my-message [text]="message.text!" />
         }
       }
       @if (isLoading()) {
