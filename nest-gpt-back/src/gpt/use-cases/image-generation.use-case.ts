@@ -41,7 +41,7 @@ export const imageGenerationUseCase = async (
   const maskPath = await downloadImageAsPng(maskImage, true);
 
   const response = await openai.images.edit({
-    model: 'dall-e-3',
+    model: 'dall-e-2',
     prompt: prompt,
     image: fs.createReadStream(pngImagePath),
     mask: fs.createReadStream(maskPath),
@@ -50,7 +50,7 @@ export const imageGenerationUseCase = async (
     response_format: 'url',
   });
 
-  const fileName = downloadImageAsPng(response.data[0].url);
+  const fileName = await downloadImageAsPng(response.data[0].url);
   const url = `${process.env.SERVER_URL}/gpt/image-generation/${fileName}`;
   return {
     url: url,
