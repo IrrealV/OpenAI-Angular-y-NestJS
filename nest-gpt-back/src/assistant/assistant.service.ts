@@ -6,6 +6,7 @@ import {
   createMessageUseCase,
   createRunUseCase,
   createThreadUseCase,
+  getMessageListUseCase,
 } from './use-cases';
 import { QuestionDto } from './dtos/question.dt';
 
@@ -35,5 +36,9 @@ export class AssistantService {
       runId: run.id,
       threadId: threadId,
     });
+
+    const messages = await getMessageListUseCase(this.openai, { threadId });
+
+    return messages.reverse();
   }
 }
