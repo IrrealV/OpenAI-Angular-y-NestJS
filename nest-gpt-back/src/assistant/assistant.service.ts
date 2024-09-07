@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 
 import OpenAI from 'openai';
 import {
+  checkCompleteStatusUseCase,
   createMessageUseCase,
   createRunUseCase,
   createThreadUseCase,
@@ -29,5 +30,10 @@ export class AssistantService {
     console.log({ message });
 
     const run = await createRunUseCase(this.openai, { threadId });
+
+    await checkCompleteStatusUseCase(this.openai, {
+      runId: run.id,
+      threadId: threadId,
+    });
   }
 }
