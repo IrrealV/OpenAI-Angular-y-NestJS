@@ -1,4 +1,4 @@
-import type { TranslateResponse } from '@interfaces/index';
+import type { TranslateResponse } from 'app/presentation/interfaces/index';
 import { environment } from 'environments/environment';
 
 export const translateUseCase = async (prompt: string, lang: string) => {

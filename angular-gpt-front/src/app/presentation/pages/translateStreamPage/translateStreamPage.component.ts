@@ -13,7 +13,7 @@ import {
   TextMessageBoxEvent,
   TextMessageBoxSelectComponent,
 } from '@components/index';
-import { Message } from '@interfaces/index';
+import { Message } from 'app/presentation/interfaces/index';
 
 import { OpenAiService } from 'app/presentation/services/openai.service';
 

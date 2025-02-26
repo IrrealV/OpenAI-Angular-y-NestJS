@@ -1,4 +1,4 @@
-import { QuestionResponse } from '@interfaces/question.response';
+import { QuestionResponse } from 'app/presentation/interfaces/question.response';
 import { environment } from 'environments/environment';
 
 export const postQuestionUseCase = async (

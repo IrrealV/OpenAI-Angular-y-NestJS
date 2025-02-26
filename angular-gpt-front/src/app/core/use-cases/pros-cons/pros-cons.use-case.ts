@@ -1,4 +1,4 @@
-import type { ProsConsResponse } from '@interfaces/pros-cons.response';
+import type { ProsConsResponse } from 'app/presentation/interfaces/pros-cons.response';
 import { environment } from 'environments/environment';
 
 export const prosConsUseCase = async (prompt: string) => {

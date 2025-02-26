@@ -13,8 +13,8 @@ import {
   TextMessageBoxFileComponent,
   TextMessageEventFile,
 } from '@components/index';
-import { AudioToTextResponse } from '@interfaces/audio-text.response';
-import { Message } from '@interfaces/message.interfaces';
+import { AudioToTextResponse } from 'app/presentation/interfaces/audio-text.response';
+import { Message } from 'app/presentation/interfaces/message.interfaces';
 import { OpenAiService } from 'app/presentation/services/openai.service';
 
 @Component({

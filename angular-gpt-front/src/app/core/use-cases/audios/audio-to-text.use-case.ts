@@ -1,5 +1,5 @@
 import { environment } from 'environments/environment';
-import { AudioToTextResponse } from '../../../interfaces/audio-text.response';
+import { AudioToTextResponse } from '../../../presentation/interfaces/audio-text.response';
 
 export const audioToTextUseCase = async (audioFile: File, prompt?: string) => {
   try {

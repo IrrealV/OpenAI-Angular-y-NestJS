@@ -16,7 +16,7 @@ import {
   TextMessageBoxEvent,
   GptMessageOrthographyComponent,
 } from '@components/index';
-import { Message } from '@interfaces/message.interfaces';
+import { Message } from 'app/presentation/interfaces/message.interfaces';
 import { OpenAiService } from '../../services/openai.service';
 
 @Component({
